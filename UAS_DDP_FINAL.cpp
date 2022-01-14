@@ -5,12 +5,13 @@ using namespace std;
 int main ()
 {
 
-    int mainMenu = 1, pilihWhile = 1,pilih,pilihBilling,kembali,bayar,bayar1,tambah = 1;
+    int mainMenu = 1, pilihWhile = 1,pilih,pilihBilling,kembali,bayar,bayar1,tambah = 1,id = 0;
     string billing[3] = {"1. Billing Internet" , "2. Billing Game Online" , "3. Exit Program"};
     string billingInternet[10] = {"1. 30 Menit = Rp.2.000" , "2. 45 Menit = Rp.3.000" , "3. 1 Jam = Rp.4.000" , "4. 1 Jam 15 Menit = Rp.5.000" ,"5. 1 Jam 30 Menit = Rp.6.000" , "6. 1 Jam 45 Menit = Rp.7.000" , "7. 2 Jam = Rp.8.000" , "8. 3 Jam = Rp.10.000" , "9. 5 Jam = Rp.12.000" , "10. 8 Jam = Rp.15.000"};
     string billingGameOnline[6] = {"1. 1 Jam = Rp.3.000" , "2. 2 Jam = Rp.6.000" , "3. 3 Jam = Rp.8.000" , "4. 4 Jam = Rp.10.000" , "5. 5 Jam = Rp.12.000" , "6. 8 Jam = Rp.17.000"};
     int hargaInternet[10] = {2000,3000,4000,5000,6000,7000,8000,10000,12000,15000};
     int hargaGameOnline[6] = {3000,6000,8000,10000,12000,17000};
+    string logBilling [100];
 
 
         while(mainMenu == 1) // Loop Main Menu jika mainMenu bernilai 1
@@ -40,6 +41,8 @@ int main ()
                             
                             switch(pilihBilling) { // awal switchPilih caseBillingInternet nested.switchPilihBilling
                                 case 1:
+                                logBilling[id] += "Billing Internet 30 Menit ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 30 Menit \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -68,16 +71,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            } 
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 2:
+                                logBilling[id] += "Billing Internet 45 Menit ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 45 Menit \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -106,16 +119,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 3:
+                                logBilling[id] += "Billing Internet 1 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 1 Jam \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -144,16 +167,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 4:
+                                logBilling[id] += "Billing Internet 1 Jam 15 Menit ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 1 Jam 15 Menit \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -182,16 +215,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 5:
+                                logBilling[id] += "Billing Internet 1 Jam 30 Menit ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 1 Jam 30 Menit \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -220,16 +263,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 6:
+                                logBilling[id] += "Billing Internet 1 Jam 45 Menit ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 1 Jam 45 Menit \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -258,16 +311,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 7:
+                                logBilling[id] += "Billing Internet 2 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 2 Jam \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -296,16 +359,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 8:
+                                logBilling[id] += "Billing Internet 3 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 3 Jam \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -334,16 +407,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 9:
+                                logBilling[id] += "Billing Internet 5 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 5 Jam \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -372,16 +455,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 10:
+                                logBilling[id] += "Billing Internet 8 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Internet 8 Jam \n"
                                 << "Harga = Rp. " << hargaInternet[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Internet \n";
@@ -410,11 +503,19 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
@@ -438,6 +539,8 @@ int main ()
 
                             switch(pilihBilling){  // awal switchPilih caseBillingGameOnline nested.switchPilih Billing
                             case 1:
+                                logBilling[id] += "Billing Game Online 1 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Game Online 1 Jam \n"
                                 << "Harga = Rp. " << hargaGameOnline[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Game Online \n";
@@ -466,16 +569,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 2:
+                                logBilling[id] += "Billing Game Online 2 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Game Online 2 Jam \n"
                                 << "Harga = Rp. " << hargaGameOnline[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Game Online \n";
@@ -504,16 +617,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 3:
+                                logBilling[id] += "Billing Game Online 3 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Game Online 3 Jam \n"
                                 << "Harga = Rp. " << hargaGameOnline[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Game Online \n";
@@ -542,16 +665,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 4:
+                                logBilling[id] += "Billing Game Online 4 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Game Online 4 Jam \n"
                                 << "Harga = Rp. " << hargaGameOnline[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Game Online \n";
@@ -580,16 +713,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 5:
+                                logBilling[id] += "Billing Game Online 5 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Game Online 5 Jam \n"
                                 << "Harga = Rp. " << hargaGameOnline[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Game Online \n";
@@ -618,16 +761,26 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
                                 break;
                                 case 6:
+                                logBilling[id] += "Billing Game Online 8 Jam ";
+                                id = id + 1;
                                 cout << "Printing Out : Billing Game Online 8 Jam \n"
                                 << "Harga = Rp. " << hargaGameOnline[pilihBilling-1] << "\n"
                                 << "Masukkan Uang Pembayaran Billing Game Online \n";
@@ -656,11 +809,19 @@ int main ()
                                             cout << "Kembali : Rp. " << kembali << "\n";
                                             cout << "Terima kasih telah membayar.\n";
                                         } else {
+                                            logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                             cout << "Uang Pembayaran : Rp." << bayar << "\n";
                                             cout << "Tambahan uang tidak mencukupi total pembayaran.\n";
                                             cout << "Transaksi selesai. Billing deleted.\n";
                                         }
                                     } else {
+                                        logBilling[id-1] = "";
+                                            if (id != 0) {
+                                                id = id - 1;
+                                            }
                                         cout <<"Transaksi selesai. Billing deleted.\n";
                                     }
                                 }
@@ -675,7 +836,11 @@ int main ()
                             break; // akhir switchPilih caseBillingGameOnline 
                         case 3: // awal switchPilih caseExitProgram
                         pilihWhile = 0;  //menghentikan loop pilihWhile.
-                        cout << "Program exited.";
+                        cout << "Log Transaksi Billing : ";
+                        for(int i=0;i<100;i++){
+                            cout << logBilling[i] << " ";
+                        }
+                        cout << endl << "Program exited.";
                         return 0; // akhiri program.
                         break; // akhir switchPilih caseExitProgram
                         default: 
